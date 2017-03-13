@@ -4,7 +4,7 @@ let express = require('express'),
     session = require('express-session');
 let cookieParser = require('cookie-parser');
 //let path = require('path');
-//let util = require("util");
+let util = require("util");
 
 let bcrypt = require("bcrypt-nodejs");
 //let hash = bcrypt.hashSync("amyspassword");
@@ -25,10 +25,17 @@ console.log('peticion a la /')
 });
 app.use(cookieParser());
 app.use(session({
-    secret: 'keyboard cat',
-    resave: false,
+    secret: 'Pruebas_Carlos_David',
+    resave: true,
     saveUninitialized: true
 }))
+
+app.use(function(req, res, next) {
+  console.log("Cookies :  "+util.inspect(req.cookies));
+  console.log("session :  "+util.inspect(req.session));
+  next();
+});
+
 //escuchar
 var server = app.listen(8090, function () {
   var host = server.address().address
