@@ -24,6 +24,11 @@ app.get('/', function(req, res){
 console.log('peticion a la /')
 });
 app.use(cookieParser());
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true
+}))
 //escuchar
 var server = app.listen(8090, function () {
   var host = server.address().address
