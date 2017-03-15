@@ -34,9 +34,9 @@ En el directorio src/ deberá de disponer de un gulpfile.js con tareas para la e
 
 * [Descripción de la practica](https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/practicas/practicalearningcookies.html)
 
-* [IaaS Carlos (10.6.128.62:8090)](https://i.imgsafe.org/2fb5b00e5e.jpg)
+* [IaaS Carlos (10.6.128.62:8090)](http://10.6.128.62:8090)
 
-* [IaaS David (10.6.129.193:8090)](https://i.imgsafe.org/2fb5b00e5e.jpg)
+* [IaaS David (10.6.129.193:8090)](http://10.6.129.193:8090)
 
 
 
@@ -48,4 +48,4 @@ En el directorio src/ deberá de disponer de un gulpfile.js con tareas para la e
 
 * [Repositorio en github](https://github.com/ULL-ESIT-DSI-1617/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4.io)
 
-* [Despliegue en la nube de Github](https://i.imgsafe.org/2fb5b00e5e.jpg)
+* [Despliegue en la nube de Github](https://ull-esit-dsi-1617.github.io/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4/) (TO SOLVE)
