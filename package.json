@@ -4,12 +4,38 @@
   "description": "",
   "main": "hello-cookie.js",
   "scripts": {
+    "generate-gitbook": "./scripts/losh generate-gitbook",
+    "generate-wiki": "./scripts/losh generate-wiki",
+    "build": "npm install && npm i gitbook-cli && npm run generate-gitbook && npm run generate-wiki",
+    "deploy-gitbook": "./scripts/losh deploy-gitbook",
+    "deploy-wiki": "./scripts/losh deploy-wiki",
+    "deploy": "npm run build && npm run deploy-gitbook && npm run deploy-wiki",
+    "version": "./scripts/losh version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ULL-ESIT-DSI-1617/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4.git",
+    "wiki": "https://github.com/ULL-ESIT-DSI-1617/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4.wiki.git"
+  },
+  "keywords": [
+    "gitbook",
+    "boilerplate",
+    "starter"
+  ],
+  "author": " Carlos Fernández , David Dorta",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-DSI-1617/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-DSI-1617/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4#readme",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^1.4.0",
+    "fs-extra": "^0.22.1",
+    "gh-pages": "^0.3.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.16.1",
     "cookie-parser": "^1.4.3",

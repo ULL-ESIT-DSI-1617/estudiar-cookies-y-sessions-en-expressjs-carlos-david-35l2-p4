@@ -79,8 +79,8 @@ app.get('/login/:id?', function (req, res) {
 });*/
 
 app.get('/logout', function (req, res) {
+  res.send(layout(req.session.user+" logout success!"));
   req.session.destroy();
-  res.send(layout("logout success!"));
 });
 
 // Get content endpoint
