@@ -7,6 +7,7 @@ let path = require('path');
 let util = require("util");
 let router = express.Router();  //rutas
 
+//myserver_middleware.js
 
 module.exports = router;
 app.set('views', path.join(__dirname, 'views'));
@@ -33,7 +34,7 @@ app.use(cookieParser());
 app.use(session({
     secret: 'Pruebas_Carlos_David',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: false
 }))
 
 app.use(function(req, res, next) {
@@ -51,10 +52,23 @@ let auth = function(req, res, next) {
     return res.sendStatus(401); // https://httpstatuses.com/401
 };
 
-// Get content endpoint
-app.get('/content/*?',
-    auth  // next only if authenticated
-);
+// Login endpoint
+app.get('/login', function (req, res) {
+  console.log(req.query);
+  if (!req.query.username || !req.query.password) {
+    console.log('login failed');
+    res.send('login failed');
+  } else if(req.query.username in users  &&
+            bcrypt.compareSync(req.query.password, users[req.query.username])) {
+    req.session.user = req.query.username;
+    req.session.admin = true;
+    res.send(layout("login success! user "+req.session.user));
+  } else {
+    console.log(`login ${util.inspect(req.query)} failed`);
+    res.send(layout(`login ${util.inspect(req.query)} failed. You are ${req.session.user || 'not logged'}`));
+  }
+});
+
 /*
 app.get('/login/:id?', function (req, res) {
   console.log('req.params.id: '+(req.params.id));
@@ -63,6 +77,16 @@ app.get('/login/:id?', function (req, res) {
   //res.send('USUARIO: '+(req.params.id || 'unknown' ));
   //res.render('index', { title: '/user/' ,username: req.params.id });
 });*/
+
+app.get('/logout', function (req, res) {
+  req.session.destroy();
+  res.send(layout("logout success!"));
+});
+
+// Get content endpoint
+app.get('/content/*?',
+    auth  // next only if authenticated
+);
 
 app.use('/content', express.static(path.join(__dirname, 'public')));
 
