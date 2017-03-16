@@ -48,4 +48,4 @@ En el directorio src/ deberá de disponer de un gulpfile.js con tareas para la e
 
 * [Repositorio en github](https://github.com/ULL-ESIT-DSI-1617/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4.io)
 
-* [Despliegue en la nube de Github](https://ull-esit-dsi-1617.github.io/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4/) (TO SOLVE)
+* [Despliegue en la nube de Github](https://ull-esit-dsi-1617.github.io/estudiar-cookies-y-sessions-en-expressjs-carlos-david-35l2-p4/)
